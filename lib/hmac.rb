@@ -1,23 +1,15 @@
 module HMAC
   class Base < OpenSSL::HMAC
     def Base.digest(key, text)
-      begin
-        hmac = self.new(key)
-        hmac.update(text)
-        hmac.digest 
-      ensure 
-        hmac.reset
-      end
+      hmac = self.new(key)
+      hmac.update(text)
+      hmac.digest 
     end
 
     def Base.hexdigest(key, text)
-      begin 
-        hmac = self.new(key)
-        hmac.update(text)
-        hmac.hexdigest
-      ensure 
-        hmac.reset
-      end
+      hmac = self.new(key)
+      hmac.update(text)
+      hmac.hexdigest
     end 
   end
 
