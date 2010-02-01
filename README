@@ -1,0 +1,3 @@
+
+Experimental ruby-hmac that uses OpenSSL for Digest and HMAC
+
