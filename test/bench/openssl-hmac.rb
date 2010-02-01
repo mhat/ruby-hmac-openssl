@@ -7,9 +7,7 @@ TXT=%{Lorem Ipsum is simply dummy text of the printing and typesetting industry.
 Benchmark.bm do |x|
   x.report("openssl-hmac-sha1") do 
     100000.times do |i| 
-      hmac = OpenSSL::HMAC.new(KEY, OpenSSL::Digest::Digest.new("SHA1")) 
-      hmac.digest
-      hmac.reset
+      OpenSSL::HMAC.digest('sha1', KEY, TXT)
     end
   end
 end             

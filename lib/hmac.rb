@@ -1,52 +1,61 @@
 module HMAC
-  class Base < OpenSSL::HMAC
-    def Base.digest(key, text)
-      hmac = self.new(key)
-      hmac.update(text)
-      hmac.digest 
+  class MD5 
+    def self.digest(key,text)
+      OpenSSL::HMAC.digest('md5', key, text)
     end
 
-    def Base.hexdigest(key, text)
-      hmac = self.new(key)
-      hmac.update(text)
-      hmac.hexdigest
-    end 
-  end
-
-  class MD5 < Base
-    def initialize(key)
-      super(key,OpenSSL::Digest::Digest.new('md5'))
+    def self.hexdigest(key,text)
+      OpenSSL::HMAC.hexdigest('md5', key, text)
     end
   end
 
-  class SHA1 < Base
-    def initialize(key)
-      super(key,OpenSSL::Digest::Digest.new('sha1'))
+  class SHA1
+    def self.digest(key,text)
+      OpenSSL::HMAC.digest('sha1', key, text)
+    end
+
+    def self.hexdigest(key,text)
+      OpenSSL::HMAC.hexdigest('sha1', key, text)
     end
   end
 
-  class SHA256 < Base
-    def initialize(key)
-      super(key,OpenSSL::Digest::Digest.new('sha256'))
+  class SHA256 
+    def self.digest(key,text)
+      OpenSSL::HMAC.digest('sha256', key, text)
+    end
+
+    def self.hexdigest(key,text)
+      OpenSSL::HMAC.hexdigest('sha256', key, text)
     end
   end
 
-  class SHA384 < Base
-    def initialize(key)
-      super(key,OpenSSL::Digest::Digest.new('sha384'))
+  class SHA384
+    def self.digest(key,text)
+      OpenSSL::HMAC.digest('sha256', key, text)
+    end
+
+    def self.hexdigest(key,text)
+      OpenSSL::HMAC.digest('sha256', key, text)
     end
   end
 
-  class SHA512 < Base
-    def initialize(key)
-      super(key,OpenSSL::Digest::Digest.new('sha512'))
+  class SHA512 
+    def self.digest(key,text)
+      OpenSSL::HMAC.digest('sha512', key, text)
+    end
+
+    def self.hexdigest(key,text)
+      OpenSSL::HMAC.digest('sha256', key, text)
     end
   end
 
-  
-  class RMD160 < Base
-    def initialize(key)
-      super(key,OpenSSL::Digest::Digest.new('rmd160'))
+  class RMD160
+    def self.digest(key,text)
+      OpenSSL::HMAC.digest('rmd160', key, text)
+    end
+
+    def self.hexdigest(key,text)
+      OpenSSL::HMAC.digest('rmd160', key, text)
     end
   end
 
