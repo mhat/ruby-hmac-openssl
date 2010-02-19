@@ -1,0 +1,5 @@
+= ruby-hmac-openssl
+
+Experimental ruby-hmac that uses OpenSSL for Digest and HMAC
+
+Copyright (c) 2010 Matthew Knopp. See LICENSE for details.

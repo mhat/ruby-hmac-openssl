@@ -31,11 +31,11 @@ module HMAC
 
   class SHA384
     def self.digest(key,text)
-      OpenSSL::HMAC.digest('sha256', key, text)
+      OpenSSL::HMAC.digest('sha384', key, text)
     end
 
     def self.hexdigest(key,text)
-      OpenSSL::HMAC.digest('sha256', key, text)
+      OpenSSL::HMAC.hexdigest('sha384', key, text)
     end
   end
 
@@ -45,7 +45,7 @@ module HMAC
     end
 
     def self.hexdigest(key,text)
-      OpenSSL::HMAC.digest('sha256', key, text)
+      OpenSSL::HMAC.hexdigest('sha512', key, text)
     end
   end
 
@@ -55,7 +55,7 @@ module HMAC
     end
 
     def self.hexdigest(key,text)
-      OpenSSL::HMAC.digest('rmd160', key, text)
+      OpenSSL::HMAC.hexdigest('rmd160', key, text)
     end
   end
 
