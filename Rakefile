@@ -5,11 +5,12 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "ruby-hmac-openssl"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{OpenSSL replacement for Ruby-HMAC}
+    gem.description = %Q{OpenSSL replacement for Ruby-HMAC}
     gem.email = "mknopp@yammer-inc.com"
     gem.homepage = "http://github.com/mhat/ruby-hmac-openssl"
     gem.authors = ["Matthew Knopp"]
+    gem.add_dependency "openssl", ">= 0"
     gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
